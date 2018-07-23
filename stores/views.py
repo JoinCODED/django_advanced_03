@@ -7,3 +7,10 @@ def store_list(request):
         "stores": Store.objects.all()
     }
     return render(request, 'store_list.html', context)
+
+def store_detail(request, store_id):
+    store = get_list_or_404(Store, id=store_id)
+    context = {
+        "store": store
+    }
+    return render (request, 'store_detail.html', context)
