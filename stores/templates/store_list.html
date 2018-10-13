@@ -6,118 +6,121 @@
 -->
 {% load static %}
 <html>
-	<head>
-		<title>The Mall</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href={% static 'css/main.css' %} />
-	</head>
-	<body>
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">The eMall <span>by Coded</span></a></div>
-				<a href="#menu">Menu</a>
-			</header>
+<head>
+	<title>The Mall</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href={% static 'css/main.css' %} />
+</head>
 
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Cart</a></li>
-					<li><a href="generic.html">Account</a></li>
-					<li><a href="elements.html">Logout</a></li>
-				</ul>
-			</nav>
+<body>
 
-		<!-- Banner -->
-			<section class="banner full">
-				<article>
-					<img src="{% static 'images/sale.jpg' %}" alt="" />
-					<div class="inner">
-						<header>
-							<p>Shop through our summer <b>sale</b></p>
-							<h2>Keep #cool</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="{% static 'images/selfie.jpg' %}" alt="" />
-					<div class="inner">
-						<header>
-							<p>Skincare, fashion, and <b>more</b></p>
-							<h2>Keep #fresh</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="{% static 'images/laptop.png' %}"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Free shipping and free returns</p>
-							<h2>Keep #calm</h2>
-						</header>
-					</div>
-				</article>
-			</section>
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div class="logo"><a href="index.html">The eMall <span>by Coded</span></a></div>
+		<a href="#menu">Menu</a>
+	</header>
 
-		<!-- One -->
-			<section id="one" class="wrapper style2">
-				<div class="inner">
-					<div class="grid-style">
-                    {% for store in stores %}
-						<div>
-							<div class="box">
-								<div class="image fit">
-									<img src="{% static 'images/cart.jpg' %}" alt="" />
-								</div>
-								<div class="content">
-									<header class="align-center">
-										<p>{{store.name}}</p>
-									</header>
-									<p align="center"> {{store.description}}</p>
-									<footer class="align-center">
-										<a href="#" class="button alt">View Products</a>
-									</footer>
-								</div>
-							</div>
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="index.html">Cart</a></li>
+			<li><a href="generic.html">Account</a></li>
+			<li><a href="elements.html">Logout</a></li>
+		</ul>
+	</nav>
+
+	<!-- Banner -->
+	<section class="banner full">
+		<article>
+			<img src="{% static 'images/sale.jpg' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Shop through our summer <b>sale</b></p>
+					<h2>Keep #classy</h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/selfie.png' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Skincare, fashion, and <b>more</b></p>
+					<h2>Keep #fresh</h2>
+				</header>
+			</div>
+		</article>
+		<article>
+			<img src="{% static 'images/laptop.png' %}" alt="" />
+			<div class="inner">
+				<header>
+					<p>Free shipping and free returns</p>
+					<h2>Keep #calm</h2>
+				</header>
+			</div>
+		</article>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="grid-style">
+				{% for store in stores %}
+				<div>
+					<div class="box">
+						<div class="image fit">
+							<img src="{% static 'images/cart.jpg' %}" alt="" />
 						</div>
-                    {% endfor %}
+						<div class="content">
+							<header class="align-center">
+								<p>{{store.name}}</p>
+							</header>
+							<p align="center"> {{store.description}}</p>
+							<footer class="align-center">
+								<a href="#" class="button alt">View Products</a>
+							</footer>
+						</div>
 					</div>
 				</div>
-			</section>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
 
-		<!-- Two -->
-			<section id="two" class="wrapper style3" style="background-image: url('{% static 'images/bg.jpg' %}')">
-				<div class="inner">
-					<header class="align-center">
-						<p>Quality. Guarenteed.</p>
-						<h2>The eMall by Coded</h2>
-					</header>
-				</div>
-			</section>
+	<!-- Two -->
+	<section id="two" class="wrapper style3" style="background-image: url('{% static 'images/bg.jpg' %}')">
+		<div class="inner">
+			<header class="align-center">
+				<p>Quality. Guarenteed.</p>
+				<h2>The eMall by Coded</h2>
+			</header>
+		</div>
+	</section>
 
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-					</ul>
-				</div>
-				<div class="copyright">
-					&copy; The eMall by Coded. All rights reserved.
-				</div>
-			</footer>
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+			</ul>
+		</div>
+		<div class="copyright">
+			&copy; The eMall by Coded. All rights reserved.
+		</div>
+	</footer>
 
-		<!-- Scripts -->
-			<script src="{% static 'js/jquery.min.js' %}"></script>
-			<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
-			<script src="{% static 'js/skel.min.js' %}"></script>
-			<script src="{% static 'js/util.js' %}"></script>
-			<script src="{% static 'js/main.js' %}"></script>
+	<!-- Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+	<script src="{% static 'js/skel.min.js' %}"></script>
+	<script src="{% static 'js/util.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
 
-	</body>
+</body>
+
 </html>
